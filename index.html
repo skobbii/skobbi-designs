@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skobbi Designs</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <img class="logo" src="https://i.imgur.com/hRYAefJ.png">
+
+  <div class="nav-links">
+    <button onclick="showPage('home')">Etusivu</button>
+    <button onclick="showPage('about')">Tietoa Meistä</button>
+    <button onclick="showPage('work')">Teokset</button>
+  </div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="glass-box">
+    <h1>Skobbi Designs</h1>
+    <p>Modernia visuaalista suunnittelua brändeille.</p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+  <div class="glass-box">
+    <h2>Tietoa Meistä</h2>
+    <p>
+      Skobbi Designs luo selkeitä, näyttäviä ja tarkoituksenmukaisia visuaaleja.
+      Jokainen projekti tehdään huolellisesti ideasta valmiiseen ilmeeseen.
+    </p>
+  </div>
+</div>
+
+<!-- PORTFOLIO -->
+<div id="work" class="page">
+  <h2 class="portfolio-title">Tehdyt Projektit</h2>
+
+  <div class="grid">
+
+    <div class="work-box" onclick="openImage('https://i.scdn.co/image/ab67616d0000b27323a8321bd17fe693210812fe')">
+      <img src="https://i.scdn.co/image/ab67616d0000b27323a8321bd17fe693210812fe">
+      <div class="work-info">
+        <h3>Projektin nimi</h3>
+        <p>Album cover design</p>
+      </div>
+    </div>
+
+    <div class="work-box" onclick="openImage('https://i.scdn.co/image/ab67616d0000b27323a8321bd17fe693210812fe')">
+      <img src="https://i.scdn.co/image/ab67616d0000b27323a8321bd17fe693210812fe">
+      <div class="work-info">
+        <h3>Projektin nimi</h3>
+        <p>Brand identity</p>
+      </div>
+    </div>
+
+    <div class="work-box" onclick="openImage('https://i.scdn.co/image/ab67616d0000b27323a8321bd17fe693210812fe')">
+      <img src="https://i.scdn.co/image/ab67616d0000b27323a8321bd17fe693210812fe">
+      <div class="work-info">
+        <h3>Projektin nimi</h3>
+        <p>Visual concept</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeImage()">
+  <img id="lightbox-img">
+</div>
+
+<script>
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+  document.getElementById(pageId).classList.add('active');
+}
+
+function openImage(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('active');
+}
+
+function closeImage() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+</script>
+
+</body>
+</html>
